@@ -56,3 +56,11 @@ AdaptiveAI_Scalper_v1 is an advanced trading EA designed to smartly scalp market
 ## Contact
 
 For questions or contributions, please open an issue or contact the maintainer.
+
+---
+
+### Note from the Developer
+
+This project is a collaborative effort between me and ChatGPT, working together to create and improve the AdaptiveAI_Scalper_v1. The continuous interaction and mutual learning make this endeavor unique and promising. Your feedback and contributions are always welcome!
+
+
