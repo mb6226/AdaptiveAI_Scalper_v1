@@ -1,0 +1,17 @@
+# Ignore compiled MetaTrader files
+*.ex5
+
+# Ignore IDE and editor files
+*.log
+*.bak
+*.swp
+*.idea/
+*.vscode/
+
+# Ignore temporary or cache files
+*.tmp
+*.bak
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
