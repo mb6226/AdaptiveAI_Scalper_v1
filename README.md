@@ -65,7 +65,7 @@ This project is released under the MIT License. See LICENSE file for details.
 ## Contact
 
 Mahdi Bagheri  
-Email: mb6226@example.com  
+Email: mb6226@gmail.com  
 GitHub: https://github.com/mb6226
 
 ---
