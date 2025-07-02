@@ -1,68 +1,143 @@
 # Adaptive AI-Driven Scalper v1
 
-## Overview
+## Project Overview
+Adaptive AI-Driven Scalper v1 is an advanced trading algorithm for smart scalping using adaptive AI-based strategies and rule-based logic. This bot integrates several strategies like adaptive trailing stop, break-even management, news filtering, and much more.
 
-Adaptive AI-Driven Scalper v1 is an advanced expert advisor (EA) designed for MetaTrader 5 that combines traditional rule-based trading strategies with machine learning signals to enhance trading performance. The strategy includes multiple modules for market data processing, signal analysis, trade management, and risk control.
+## Project Structure
 
----
+This repository is organized into several key directories for better modularity and ease of maintenance:
 
-## Project Roadmap
+/AdaptiveAI_Scalper_v1
+│
+├── /Code
+│ ├── /MarketData # Market data handling, indicators, and price retrieval
+│ ├── /SignalAnalyzer # Signal generation and analysis based on market data
+│ ├── /TradeManager # Trade execution, managing orders, stop loss, and take profit
+│ ├── /RiskManager # Risk management strategies, including equity guard and time filtering
+│ ├── /Dashboard # Display system status and log real-time data
+│ └── AdaptiveAI_Scalper_v1.mq5 # Main entry point for the EA
+│
+├── /Tests
+│ ├── /MarketDataTest # Unit tests for MarketData module
+│ ├── /SignalAnalyzerTest # Unit tests for SignalAnalyzer module
+│ ├── /TradeManagerTest # Unit tests for TradeManager module
+│ └── /RiskManagerTest # Unit tests for RiskManager module
+│
+├── /Docs
+│ └── project_description.md # Documentation of the project including goals, requirements, and architecture.
+│
+└── README.md # Project overview and setup instructions.
 
-### Step 1: EA Testing and Optimization  
-- Run the EA with all designed modules (scoring entry, adaptive SL/TP, trailing, break-even, news/time filters, cooldowns, etc.)  
-- Perform detailed backtesting on real data and demo account testing  
-- Review dashboard outputs, signals, and risk management  
-- Apply necessary corrections and improvements  
+markdown
+Copy
+Edit
 
-### Step 2: Data Collection and Storage  
-- Save price data, indicators, and EA signals (e.g., in CSV files) at every tick  
-- Record trade results (entries, exits, P/L) for ML training  
-- Prepare datasets for model training  
+### Key Features
+- **MarketData Module**: Handles all market data retrieval including RSI, ATR, EMA, and Bollinger Bands.
+- **SignalAnalyzer Module**: Generates buy/sell signals based on market data and various technical indicators.
+- **TradeManager Module**: Responsible for executing trades, including stop loss, take profit, and trailing stop logic.
+- **RiskManager Module**: Manages risk by monitoring equity, time-based filters, and news-based filters.
+- **Dashboard Module**: Displays the status of the system and logs on the chart for easy monitoring.
 
-### Step 3: ML Model Training Outside MT5 (e.g., Python)  
-- Analyze data and train simple ML models (regression, decision trees, simple neural networks)  
-- Evaluate model accuracy on new data  
-- Output signals as entry probabilities  
+## Setup & Installation
 
-### Step 4: Signal File Format Design for EA Input  
-- Create CSV or JSON files containing timestamp, signal type, and strength  
-- Develop EA code to read and update signals from these files  
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/mb6226/AdaptiveAI_Scalper_v1.git
+Open MetaEditor and load the AdaptiveAI_Scalper_v1.mq5 file.
 
-### Step 5: Combine ML Logic with EA Scoring System  
-- Merge ML signals with rule-based scoring  
-- Weight or condition combined entries  
-- Test and optimize decision making  
+Compile the EA in MetaEditor to ensure there are no compilation errors.
 
-### Step 6: Real-Time EA Connection to ML Model (Optional/Advanced)  
-- Connect EA to Python app or ML service via DLL or API  
-- Receive live signals with low latency  
-- Manage security and performance  
+Test the EA in MetaTrader 5 using a demo account before running it on a live account.
 
-### Step 7: Continuous Improvement and Expansion  
-- Add more filters (news, volume, candlestick patterns)  
-- Implement online learning  
-- Automate reporting and analysis  
-- Enhance risk management  
+Usage
+Input Parameters:
 
----
+Lots: Trade size (default: 0.1)
 
-## How to Get Started
+Slippage: Maximum allowable slippage (default: 3)
 
-1. Clone the repository to your local machine.  
-2. Review and test each module incrementally.  
-3. Use the detailed roadmap to proceed step-by-step.  
-4. Feel free to submit issues or pull requests for improvements.  
+ATR_SL_Multiplier: ATR multiplier for stop loss calculation (default: 1.0)
 
----
+ATR_TP_Multiplier: ATR multiplier for take profit calculation (default: 1.5)
 
-## About Us
+RSI_Period: Period for RSI indicator (default: 14)
 
-This project is a joint effort between me and ChatGPT.  
-Our goal is to build and improve the Adaptive AI-Driven Scalper v1 strategy together.  
-We welcome your feedback and contributions to make this project even better!
+TradeStartHour: Hour to start trading (default: 8)
 
-Feel free to reach out or open issues if you want to collaborate or have questions.  
-Let’s grow and learn as a community!
+TradeEndHour: Hour to stop trading (default: 18)
 
----
+And more...
 
+Main Logic:
+The bot will place trades based on signals generated by technical indicators such as RSI, ATR, and EMA. It includes additional features such as trailing stop and break-even to optimize the performance.
+
+Testing
+Unit tests for each module (MarketData, SignalAnalyzer, TradeManager, and RiskManager) are located in the /Tests directory. You can run them to verify the correctness of each module.
+
+Contributing
+Feel free to fork this repository, submit issues, and make pull requests. Contributions are welcome to improve this EA's functionality.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Complete Implementation of Adaptive AI-Driven Scalper
+Phase 1️⃣: Full Testing and Optimization of Current EA
+Run the bot with all modules we've designed (score entry, adaptive SL/TP, trailing, break-even, time and news filtering, cooldown, etc.)
+
+Perform accurate backtesting on live data and demo account testing.
+
+Evaluate output of dashboard, signals, and risk management.
+
+Apply necessary fixes and improvements.
+
+Phase 2️⃣: Data Collection and Storage
+Save price data, indicators, and bot signals (e.g., in a CSV file) on every tick.
+
+Store trade results (entries, exits, profits/losses) for accurate training of the AI model.
+
+Prepare the data for training.
+
+Phase 3️⃣: Machine Learning Model Training (Outside MetaTrader)
+Analyze data and train a simple ML model (regression, decision trees, simple neural networks).
+
+Evaluate model accuracy with new data.
+
+Output model as a signal or entry probability.
+
+Phase 4️⃣: Design Signal File Template for EA Input
+Create a CSV or JSON file that contains time, signal type, and signal strength.
+
+Implement code inside the EA to read and update signals.
+
+Phase 5️⃣: Combine ML Logic with EA Scoring System
+Combine ML signals with rule-based scoring logic (e.g., weighting).
+
+Set threshold conditions for entry.
+
+Test and optimize decision-making.
+
+Phase 6️⃣: Real-Time EA to ML Model Integration (Optional)
+Connect the EA to a Python program or ML service via DLL or API.
+
+Fetch live signals and make fast responses.
+
+Ensure security and performance.
+
+Phase 7️⃣: Continuous Improvement and Development
+Add more filters (news, volume, candlestick patterns).
+
+Implement online learning (continuous model training).
+
+Smarter risk management.
+
+Advanced automatic analysis and reporting.
+
+Let's Get Started:
+If you're ready, we can start with Phase 1: Design the ML Signal CSV Template and write the EA code for reading it.
+
+Or we can go straight to Phase 2: Data collection within the EA.
+
+Feel free to ask any questions or jump to any phase you'd like to begin with!
+
+Contributed by ChatGPT & mb6226
