@@ -1,174 +1,56 @@
-# AdaptiveAI Scalper v1 - Source Code
+# AdaptiveAI Scalper Expert Advisor Setup Guide
 
-This directory contains the complete source code for the AdaptiveAI Scalper v1 Expert Advisor, built with a modular architecture for MetaTrader 5.
+This guide provides step-by-step instructions to correctly set up and run the AdaptiveAI Scalper Expert Advisor (EA). Follow these steps carefully to ensure proper functionality.
 
-## File Structure
+## Important Note
+All `.mq5` and `.mqh` files **must be placed in the same folder**. If these files are scattered across different folders, the EA will not function correctly.
+
+---
+
+## Step 1: Add the EA and Supporting Files to MetaTrader
+1. Copy all files from the `Code` folder, including:
+   - `AdaptiveAI_Scalper_v1.mq5`
+   - All `.mqh` files
+2. Open your MetaTrader 5 platform.
+3. In the MetaTrader menu, go to **File > Open Data Folder**.
+4. Navigate to the `MQL5/Experts/` directory.
+5. Paste all copied files into this folder.
+6. Restart MetaTrader 5 to load the EA and supporting files.
+
+---
+
+## Step 2: Attach the EA to a Chart
+1. Open a chart of the desired currency pair and timeframe in MetaTrader 5.
+2. Drag and drop the `AdaptiveAI_Scalper_v1` EA from the **Navigator** window onto the chart.
+3. Enable **Algo Trading** by clicking on the `Algo Trading` button in the toolbar.
+
+---
+
+## Step 3: Load the Optimized Settings File
+The optimized settings file for the EA, `AdaptiveAI_Scalper_v1.set`, is located in the following path:
 
 ```
-Code/
-├── README.md                    # This documentation file
-├── AdaptiveAI_Scalper_v1.mq5   # Main Expert Advisor file
-├── Dashboard.mqh                # Chart dashboard display module
-├── MarketData.mqh               # Market data and indicators module
-├── RiskManager.mqh              # Risk management and controls
-├── SignalAnalyzer.mqh           # Signal analysis and scoring
-└── TradeManager.mqh             # Trade execution and management
+Backtests/Settings/AdaptiveAI_Scalper_v1.set
 ```
 
-## Main Expert Advisor
+### How to Load the Settings File:
+1. After attaching the EA to the chart, a settings window will appear.
+2. Click on the **Load** button in the bottom-right corner of the settings window.
+3. Navigate to the `Backtests/Settings` folder where the `.set` file is located.
+4. Select the `AdaptiveAI_Scalper_v1.set` file and click **Open**.
+5. Click **OK** to apply the settings.
 
-### AdaptiveAI_Scalper_v1.mq5
-**Purpose:** Main EA file that orchestrates all modules
+---
 
-**Key Features:**
-- 25+ configurable input parameters
-- Modular architecture with clean separation of concerns
-- Real-time signal scoring system
-- Advanced risk management integration
-- Professional dashboard display
+## Step 4: Run the EA
+1. Ensure that the `Algo Trading` button in the MetaTrader toolbar is enabled.
+2. Monitor the EA's performance directly on the chart or through the **Strategy Tester**.
 
-**Core Logic:**
-- Signal analysis using multiple indicators (RSI, EMA, Bollinger Bands)
-- Multi-timeframe analysis (M5 primary, M15 higher timeframe)
-- Scoring-based trade decision system (60+ score threshold)
-- Automated trade management with trailing stops and breakeven
+---
 
-## Module Documentation
+## Notes and Recommendations
+- Always test the EA in the **Strategy Tester** before running it on a live account.
+- Regularly update the `.set` file when new optimizations are available.
+- For any issues or questions, please refer to the [GitHub Repository](https://github.com/mb6226/AdaptiveAI_Scalper_v1) or contact the developer.
 
-### Dashboard.mqh
-**Purpose:** Real-time chart information display
-
-**Features:**
-- Live signal status display
-- Current spread monitoring
-- Account equity tracking
-- Buy/Sell score visualization
-- Customizable position and styling
-
-**Methods:**
-- `SetPosition(x, y)` - Set dashboard position
-- `SetFontSize(size)` - Configure font size
-- `SetTextColor(color)` - Set text color
-- `Show(text)` - Display information
-- `Remove()` - Clean up dashboard
-
-### MarketData.mqh
-**Purpose:** Technical indicator calculations and market data
-
-**Indicators Supported:**
-- **RSI:** Relative Strength Index (14 period default)
-- **ATR:** Average True Range for volatility
-- **Bollinger Bands:** 20 period, 2 deviation
-- **EMA:** Exponential Moving Averages (Fast/Slow)
-- **Spread:** Real-time spread monitoring
-
-**Scoring Methods:**
-- `CalculateBuyScore()` - Analyze bullish conditions
-- `CalculateSellScore()` - Analyze bearish conditions
-- Multi-factor scoring system with configurable weights
-
-### RiskManager.mqh
-**Purpose:** Comprehensive risk control system
-
-**Risk Controls:**
-- **Trading Hours:** Configurable start/end times (8 AM - 6 PM default)
-- **News Filter:** Avoid trading during news events (30 min buffer)
-- **Equity Guard:** Stop trading if equity drops below threshold (70% default)
-- **Spread Limits:** Maximum spread filtering
-
-**Methods:**
-- `IsTradingHour()` - Check if within trading hours
-- `IsNewsTime()` - Detect news event proximity
-- `IsEquityOk()` - Validate account equity levels
-
-### SignalAnalyzer.mqh
-**Purpose:** Advanced signal analysis and scoring
-
-**Signal Components:**
-- **RSI Analysis:** Overbought/Oversold detection with buffers
-- **EMA Crossover:** Fast/Slow EMA relationship analysis
-- **Bollinger Bands:** Price position relative to bands
-- **Multi-Timeframe:** M5 and M15 timeframe confirmation
-- **Spread Quality:** Trade execution cost analysis
-- **EMA Convergence:** Price consolidation detection
-
-**Scoring System:**
-- Configurable weights for each indicator
-- Positive scores for favorable conditions
-- Negative scores for unfavorable conditions
-- Threshold-based trade triggers (60+ score)
-
-### TradeManager.mqh
-**Purpose:** Complete trade lifecycle management
-
-**Trade Execution:**
-- **ATR-Based SL/TP:** Dynamic stop loss and take profit calculation
-- **Order Validation:** Proper stop level and spread checking
-- **Magic Number:** Trade identification and management
-- **Slippage Control:** Maximum acceptable slippage
-
-**Advanced Features:**
-- **Trailing Stop:** Profit protection with configurable parameters
-- **Breakeven:** Automatic breakeven when profit targets met
-- **Position Management:** Real-time trade monitoring
-- **Error Handling:** Comprehensive trade error management
-
-## Configuration Parameters
-
-### Risk Management
-- `Lots` - Fixed lot size (0.1 default)
-- `UseAutoLot` - Enable automatic lot sizing
-- `RiskPercent` - Risk percentage per trade (20% default)
-- `EquityStopPercent` - Equity protection threshold (70% default)
-
-### Technical Analysis
-- `RSI_Period` - RSI calculation period (14 default)
-- `RSI_Overbought/Oversold` - RSI signal thresholds (60/40 default)
-- `EMASlow/EMAFast` - EMA periods (50/20 default)
-- `ATR_Period` - ATR calculation period (14 default)
-
-### Trade Management
-- `ATR_SL_Multiplier` - Stop loss distance (2.0x ATR default)
-- `ATR_TP_Multiplier` - Take profit distance (15.0x ATR default)
-- `UseTrailingStop` - Enable trailing stop functionality
-- `TrailingStart/Step` - Trailing stop parameters (30/10 pips default)
-
-### Signal Scoring
-- `Score_RSI` - RSI indicator weight (35 default)
-- `Score_EMA` - EMA crossover weight (50 default)
-- `Score_BB` - Bollinger Bands weight (15 default)
-- `Score_EMA_HTF` - Higher timeframe weight (10 default)
-- `Score_Spread` - Spread quality weight (10 default)
-- `Score_EMA_Close` - EMA convergence weight (-10 default)
-
-## Usage Instructions
-
-1. **Installation:**
-   - Copy all .mqh files to the same directory as the .mq5 file
-   - Compile AdaptiveAI_Scalper_v1.mq5 in MetaEditor
-   - Load the EA on desired chart (M5 timeframe recommended)
-
-2. **Configuration:**
-   - Use provided .set file for optimized parameters
-   - Adjust risk parameters based on account size
-   - Configure trading hours for your timezone
-
-3. **Monitoring:**
-   - Watch dashboard for real-time signal information
-   - Monitor equity protection levels
-   - Review trade logs for performance analysis
-
-## Development Notes
-
-- **Architecture:** Clean modular design for easy maintenance
-- **Error Handling:** Comprehensive error checking and logging
-- **Performance:** Optimized for real-time tick processing
-- **Scalability:** Easy to add new indicators or risk controls
-- **Testing:** Compatible with Strategy Tester optimization
-
-## Version History
-
-- **v1.0:** Initial release with complete modular architecture
-- Full signal analysis system implementation
-- Advanced risk management integration
-- Professional dashboard and monitoring
+Happy Trading!
