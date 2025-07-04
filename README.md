@@ -26,41 +26,39 @@ A modular and adaptive Expert Advisor (EA) designed for smart high-frequency sca
 
 ## 📂 Project Structure
 
+```
 AdaptiveAI_Scalper_v1/
 │
 ├── Docs/
-│ └── project_description.md
+│   └── project_description.md
 │
 ├── Code/
-│ ├── AdaptiveAI_Scalper_v1.mq5
-│ ├── MarketData.mqh
-│ ├── SignalAnalyzer.mqh
-│ ├── TradeManager.mqh
-│ ├── RiskManager.mqh
-│ └── Dashboard.mqh
+│   ├── AdaptiveAI_Scalper_v1.mq5
+│   ├── MarketData.mqh
+│   ├── SignalAnalyzer.mqh
+│   ├── TradeManager.mqh
+│   ├── RiskManager.mqh
+│   └── Dashboard.mqh
 │
 ├── Tests/
-│ ├── MarketDataTest.mq5
-│ ├── SignalAnalyzerTest.mq5
-│ └── TradeManagerTest.mq5
-
-yaml
-Copy
-Edit
+│   ├── MarketDataTest.mq5
+│   ├── SignalAnalyzerTest.mq5
+│   └── TradeManagerTest.mq5
+```
 
 ---
 
 ## 📊 Backtest Summary (1-Year on EURUSD, M5)
 
-| Metric                     | Result       |
-|---------------------------|--------------|
-| Total Net Profit          | $54,485.87   |
-| Profit Factor             | 1.49         |
-| Total Trades              | 5,767        |
-| Win Rate (Long/Short)     | 90.8% / 90.2%|
-| Max Drawdown              | 3.65%        |
-| Expected Payoff           | $9.45        |
-| Sharpe Ratio              | 8.67         |
+| Metric                 | Result        |
+|------------------------|--------------|
+| Total Net Profit       | $54,485.87   |
+| Profit Factor          | 1.49         |
+| Total Trades           | 5,767        |
+| Win Rate (Long/Short)  | 90.8% / 90.2%|
+| Max Drawdown           | 3.65%        |
+| Expected Payoff        | $9.45        |
+| Sharpe Ratio           | 8.67         |
 
 > Backtested from 2024.07.02 to 2025.07.02 using fixed lot (1.0) and optimized scoring inputs.
 
@@ -106,5 +104,5 @@ MIT License — open to contributors & researchers.
 ## 👤 Author
 
 **Mahdi Bagheri**  
-📧 GitHub: [@mb6226](https://github.com/mb6226)  
-🔬 Focus: AI-Driven Trading, Scalping Strategies, MQL5 Automation
+GitHub: [@mb6226](https://github.com/mb6226)  
+Focus: AI-Driven Trading, Scalping Strategies, MQL5 Automation
