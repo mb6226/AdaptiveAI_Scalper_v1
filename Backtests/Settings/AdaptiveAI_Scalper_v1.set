@@ -1,48 +1,29 @@
-;+------------------------------------------------------------------+
-;| AdaptiveAI_Scalper_v1.set                                        |
-;| Settings file for Adaptive AI-Driven Scalper v1                 |
-;| Generated on: July 4, 2025                                      |
-;+------------------------------------------------------------------+
-
-; Lot and Risk Management
-Lots=0.1
-UseAutoLot=true
-RiskPercent=20.0
-
-; Trade Execution Settings
-Slippage=3
-ATR_SL_Multiplier=2.0
-ATR_TP_Multiplier=15.0
-MagicNumber=123456
-
-; Technical Indicators
-ATR_Period=14
-RSI_Period=14
-RSI_Overbought=60.0
-RSI_Oversold=40.0
-EMASlow=50
-EMAFast=20
-SpreadLimit=20.0
-
-; Advanced Trade Management
-UseTrailingStop=true
-TrailingStart=30.0
-TrailingStep=10.0
-UseBreakEven=true
-BreakEvenTrigger=30.0
-BreakEvenOffset=2.0
-
-; Trading Hours and Risk Controls
-TradeStartHour=8
-TradeEndHour=18
-EnableEquityGuard=true
-EquityStopPercent=70.0
-CooldownMinutes=15
-
-; Signal Scoring System
-Score_RSI=35
-Score_EMA=50
-Score_BB=15
-Score_EMA_HTF=10
-Score_Spread=10
-Score_EMA_Close=-10
+; saved on 2025.07.04 10:00:41
+; this file contains input parameters for testing/optimizing AdaptiveAI_Scalper_v1 expert advisor
+; to use it in the strategy tester, click Load in the context menu of the Inputs tab
+;
+Lots=1.0||0.1||0.010000||1.000000||N
+UseAutoLot=false||false||0||true||N
+RiskPercent=20.0||20.0||2.000000||200.000000||N
+Slippage=20||3||1||30||N
+ATR_SL_Multiplier=4.6||4.5||0.1||4.7||N
+ATR_TP_Multiplier=8.2||8.5||0.05||8.7||Y
+MagicNumber=123456||123456||1||1234560||N
+ATR_Period=10||9||1||15||N
+RSI_Period=3||2||1||6||N
+RSI_Overbought=71||67||1||71||N
+RSI_Oversold=30.0||29||1||31||N
+EMASlow=50||50||50||500||N
+EMAFast=3||20||20||200||N
+SpreadLimit=20.0||20.0||2.000000||200.000000||N
+UseTrailingStop=true||false||0||true||N
+TrailingStart=21||20||1||24||N
+TrailingStep=6||1||1||8||N
+UseBreakEven=true||false||0||true||N
+BreakEvenTrigger=30.0||30.0||30||300.000000||N
+BreakEvenOffset=2.0||2.0||0.200000||20.000000||N
+TradeStartHour=8||1||1||8||N
+TradeEndHour=21||18||1||24||N
+EnableEquityGuard=true||false||0||true||N
+EquityStopPercent=70.0||70.0||7.000000||700.000000||N
+CooldownMinutes=15||5||5||60||N
