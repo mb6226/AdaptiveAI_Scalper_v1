@@ -138,14 +138,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## Let's Get Started
-
-If you're ready, we can start with **Phase 1: Design the ML Signal CSV Template** and write the EA code for reading it.
-
-Or we can go straight to **Phase 2: Data collection within the EA**.
-
-Feel free to ask any questions or jump to any phase you'd like to begin with!
-
----
-
 **Contributed by ChatGPT & mb6226**
