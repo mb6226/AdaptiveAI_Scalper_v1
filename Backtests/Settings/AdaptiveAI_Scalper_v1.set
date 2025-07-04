@@ -1,0 +1,48 @@
+;+------------------------------------------------------------------+
+;| AdaptiveAI_Scalper_v1.set                                        |
+;| Settings file for Adaptive AI-Driven Scalper v1                 |
+;| Generated on: July 4, 2025                                      |
+;+------------------------------------------------------------------+
+
+; Lot and Risk Management
+Lots=0.1
+UseAutoLot=true
+RiskPercent=20.0
+
+; Trade Execution Settings
+Slippage=3
+ATR_SL_Multiplier=2.0
+ATR_TP_Multiplier=15.0
+MagicNumber=123456
+
+; Technical Indicators
+ATR_Period=14
+RSI_Period=14
+RSI_Overbought=60.0
+RSI_Oversold=40.0
+EMASlow=50
+EMAFast=20
+SpreadLimit=20.0
+
+; Advanced Trade Management
+UseTrailingStop=true
+TrailingStart=30.0
+TrailingStep=10.0
+UseBreakEven=true
+BreakEvenTrigger=30.0
+BreakEvenOffset=2.0
+
+; Trading Hours and Risk Controls
+TradeStartHour=8
+TradeEndHour=18
+EnableEquityGuard=true
+EquityStopPercent=70.0
+CooldownMinutes=15
+
+; Signal Scoring System
+Score_RSI=35
+Score_EMA=50
+Score_BB=15
+Score_EMA_HTF=10
+Score_Spread=10
+Score_EMA_Close=-10
