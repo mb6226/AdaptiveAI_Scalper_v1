@@ -6,6 +6,8 @@
 #include "MarketData.mqh"
 #include "TradeManager.mqh"
 #include "Dashboard.mqh"
+#include "RiskManager.mqh"
+#include "SignalAnalyzer.mqh"
 
 #property strict
 
